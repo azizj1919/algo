@@ -1,0 +1,66 @@
+// la fonction de recherche
+FUNCTION check(x,x1,y,y1 : INTEGER ) : INTEGER;
+// les variables de la fonction
+VAR
+    kes:INTEGER
+BEGIN
+    kes:=(x*x1)+(y*y1);
+    return kes;
+END
+
+
+// le procedure de recherche
+PROCEDURE check2(x,x1,y,y1 : INTEGER, VAR kes:INTEGER);
+VAR
+    kes:INTEGER
+BEGIN
+   kes:=(x*x1)+(y*y1);
+    
+END
+
+
+
+
+// algo principale avec function
+ALGORITHM ps;
+VAR
+    t : ARRAY_OF INTEGER[2];
+    m : ARRAY_OF INTEGER[2];
+    c:INTEGER;
+BEGIN
+FOR i FROM 1 TO t.length STEP 1  DO
+   
+
+   c:=check(t[1],m[1],t[2],m[2]);
+   END_FOR
+IF (c=0) THEN
+     write("ortho");
+ELSE
+    write("nonortho");
+END_IF
+   
+  
+END
+
+
+// algo pricipale avec procedure
+
+ALGORITHM ps;
+VAR
+    t : ARRAY_OF INTEGER[2];
+    m : ARRAY_OF INTEGER[2];
+    c:INTEGER;
+BEGIN
+FOR i FROM 1 TO t.length STEP 1  DO
+    
+
+   check2(t[1],m[1],t[2],m[2],c);
+   END_FOR
+IF (c=0) THEN
+     write("ortho");
+ELSE
+    write("nonortho");
+END_IF
+   
+  
+END
